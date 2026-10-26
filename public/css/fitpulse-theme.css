@@ -1,0 +1,263 @@
+/* =====================================================
+   FitPulse Tracker – Custom Theme CSS
+   Color Scheme (Analogous / Nature-inspired)
+   =====================================================
+   Primary:      #0d5c3e   (Deep Emerald)
+   Secondary:    #1a936f   (Fresh Green)
+   Accent:       #f3a712   (Energetic Gold)
+   Background:   #f0f7f4   (Soft Mint)
+   Text:         #1a2e24   (Dark Forest)
+   Light Accent: #d4ece4   (Pale Sage)
+   ===================================================== */
+
+:root {
+    --fp-primary: #0d5c3e;
+    --fp-secondary: #1a936f;
+    --fp-accent: #f3a712;
+    --fp-bg: #f0f7f4;
+    --fp-text: #1a2e24;
+    --fp-light-accent: #d4ece4;
+    --fp-primary-rgb: 13, 92, 62;
+    --fp-accent-rgb: 243, 167, 18;
+}
+
+/* ---------- Global ---------- */
+body.bg-fitpulse {
+    background-color: var(--fp-bg);
+    color: var(--fp-text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Bootstrap color overrides ---------- */
+.bg-primary,
+.btn-primary,
+.table-primary,
+.navbar.bg-primary,
+.card-header.bg-primary,
+.badge.bg-primary {
+    background-color: var(--fp-primary) !important;
+    border-color: var(--fp-primary) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--fp-secondary) !important;
+    border-color: var(--fp-secondary) !important;
+}
+
+.text-primary {
+    color: var(--fp-primary) !important;
+}
+
+.bg-secondary,
+.btn-secondary {
+    background-color: var(--fp-secondary) !important;
+    border-color: var(--fp-secondary) !important;
+}
+
+.text-secondary {
+    color: var(--fp-secondary) !important;
+}
+
+.border-primary {
+    border-color: var(--fp-primary) !important;
+}
+
+/* Accent (gold) utilities */
+.bg-accent {
+    background-color: var(--fp-accent) !important;
+}
+
+.text-accent {
+    color: var(--fp-accent) !important;
+}
+
+.btn-accent {
+    background-color: var(--fp-accent);
+    border-color: var(--fp-accent);
+    color: var(--fp-text);
+    font-weight: 600;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+    background-color: #d9940f;
+    border-color: #d9940f;
+    color: var(--fp-text);
+}
+
+.bg-light-accent {
+    background-color: var(--fp-light-accent) !important;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--fp-accent);
+}
+
+.navbar-brand {
+    letter-spacing: 0.02em;
+}
+
+/* ---------- Cards & Stats ---------- */
+.stat-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(var(--fp-primary-rgb), 0.12) !important;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+}
+
+.card {
+    border-radius: 0.5rem;
+}
+
+.card-header {
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+/* ---------- Tables ---------- */
+.table thead.table-primary th {
+    background-color: var(--fp-primary) !important;
+    color: #fff;
+    border-color: var(--fp-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(var(--fp-primary-rgb), 0.05);
+}
+
+/* ---------- Forms ---------- */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--fp-secondary);
+    box-shadow: 0 0 0 0.2rem rgba(var(--fp-primary-rgb), 0.2);
+}
+
+.form-label {
+    color: var(--fp-text);
+}
+
+/* ---------- Alerts ---------- */
+.alert-success {
+    background-color: var(--fp-light-accent);
+    border-color: var(--fp-secondary);
+    color: var(--fp-primary);
+}
+
+/* ---------- Footer ---------- */
+footer.bg-primary {
+    background-color: var(--fp-primary) !important;
+}
+
+/* ---------- Pagination (Laravel default) ---------- */
+.pagination .page-item.active .page-link {
+    background-color: var(--fp-primary);
+    border-color: var(--fp-primary);
+}
+
+.pagination .page-link {
+    color: var(--fp-primary);
+}
+
+.pagination .page-link:hover {
+    color: var(--fp-secondary);
+    background-color: var(--fp-light-accent);
+}
+
+/* ---------- Auth pages (login / register) ---------- */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--fp-bg) 0%, var(--fp-light-accent) 100%);
+}
+
+.auth-card {
+    max-width: 420px;
+    width: 100%;
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(var(--fp-primary-rgb), 0.15);
+}
+
+.auth-card .card-header {
+    background-color: var(--fp-primary);
+    color: #fff;
+    text-align: center;
+    border-radius: 0.75rem 0.75rem 0 0;
+    padding: 1.25rem;
+}
+
+.auth-card .card-header h4 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.auth-logo {
+    font-size: 2rem;
+    color: var(--fp-accent);
+}
+
+/* ---------- Badges ---------- */
+.badge.bg-success {
+    background-color: var(--fp-secondary) !important;
+}
+
+/* ---------- Links ---------- */
+a {
+    color: var(--fp-secondary);
+}
+
+a:hover {
+    color: var(--fp-primary);
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 576px) {
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Hide the broken big arrows */
+svg,
+.arrow-left,
+.arrow-right,
+[class*="arrow"],
+.pagination svg {
+    max-width: 24px !important;
+    max-height: 24px !important;
+}
+
+/* Even stronger hide if needed */
+body > svg,
+.container svg:not(.small-icon) {
+    display: none !important;
+}
